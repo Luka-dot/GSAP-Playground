@@ -11,10 +11,11 @@ function Dots() {
     let circleBlue = useRef(null);
 
     useEffect(() => {
-        TweenMax.to(circleContainer, 0, {css: {visibility: 'visible'}});
-        TweenMax.from(circle, .8, {opacity: 0, x: 40, ease: Power3.easeOut});
-        TweenMax.from(circleRed, .8, {opacity: 0, x: 40, ease: Power3.easeOut, delay: .2});
-        TweenMax.from(circleBlue, .8, {opacity: 0, x: 40, ease: Power3.easeOut, delay: .4})
+        // TweenMax.to(circleContainer, 0, {css: {visibility: 'visible'}});
+        // TweenMax.from(circle, .8, {opacity: 0, x: 40, ease: Power3.easeOut});
+        // TweenMax.from(circleRed, .8, {opacity: 0, x: 40, ease: Power3.easeOut, delay: .2});
+        // TweenMax.from(circleBlue, .8, {opacity: 0, x: 40, ease: Power3.easeOut, delay: .4})
+        TweenMax.staggerFrom([circle, circleRed, circleBlue], .8, {opacity: 0, x: 40, ease: Power3.easeOut}, .3)
     }, []);
 
     return (
