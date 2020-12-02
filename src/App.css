@@ -8,6 +8,9 @@
   pointer-events: none;
 }
 
+.p {
+  opacity: 0;
+}
 
 .App-header {
   background-color: #282c34;

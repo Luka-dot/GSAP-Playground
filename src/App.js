@@ -6,6 +6,7 @@ import { TweenMax, Power3 } from 'gsap';
 
 function App() {
   let logoItem = useRef(null);
+  let textItem = useRef(null);
 
   useEffect(() => {
     TweenMax.to(
@@ -15,6 +16,16 @@ function App() {
         opacity: 1,
         y: -20,
         ease: Power3.easeOut
+      }
+    );
+    TweenMax.to(
+      textItem,
+      1.8,
+      {
+        opacity: 1,
+        y: -20,
+        ease: Power3.easeOut,
+        delay: .4
       }
     )
   }, [])
@@ -28,7 +39,9 @@ function App() {
           className="App-logo" 
           alt="logo" 
         />
-        <p>
+        <p
+          ref={el => { textItem = el}}
+        >
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
