@@ -4,6 +4,8 @@ import './App.css';
 
 import { TweenMax, Power3 } from 'gsap';
 
+import Dots from './components/dots-component';
+
 function App() {
   let logoItem = useRef(null);
   let textItem = useRef(null);
@@ -53,6 +55,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Dots />
     </div>
   );
 }

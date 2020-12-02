@@ -1,3 +1,7 @@
+.circle-container {
+    visibility: hidden;
+}
+
 .circle {
     width: 75px;
     height: 75px;
