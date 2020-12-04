@@ -4,7 +4,8 @@ import './App.css';
 
 import { TweenMax, Power3 } from 'gsap';
 
-import Dots from './components/dots-component';
+import Dots from './components/dots/dots-component';
+import ImageTransition from './components/imageTransition/imageTransition-component';
 
 function App() {
   let logoItem = useRef(null);
@@ -55,7 +56,8 @@ function App() {
           Learn React
         </a>
       </header>
-      <Dots />
+      <ImageTransition />
+      {/* <Dots /> */}
     </div>
   );
 }
