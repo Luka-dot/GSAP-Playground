@@ -45,11 +45,13 @@ function App() {
         <p
           ref={el => { textItem = el}}
         >
-          Edit <code>src/App.js</code> and save to reload.
+          Text and Logo scrolls on re-load.
         </p>
       </header>
-      <ImageTransition />
+      <div className="body-container">
       <Dots />
+      <ImageTransition />
+      </div>
     </div>
   );
 }
