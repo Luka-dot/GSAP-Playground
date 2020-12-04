@@ -6,6 +6,7 @@ import { TweenMax, Power3 } from 'gsap';
 
 import Dots from './components/dots/dots-component';
 import ImageTransition from './components/imageTransition/imageTransition-component';
+import Slider from './components/slider/slider-component';
 
 function App() {
   let logoItem = useRef(null);
@@ -49,9 +50,10 @@ function App() {
         </p>
       </header>
       <div className="body-container">
-      <Dots />
-      <ImageTransition />
+        <Dots />
+        <ImageTransition />
       </div>
+      <Slider />
     </div>
   );
 }
