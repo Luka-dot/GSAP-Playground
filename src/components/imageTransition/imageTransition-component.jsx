@@ -15,8 +15,9 @@ function ImageTransition() {
 
     useEffect(() => {
         console.log(imageReveal);
-        tl.to(container, 1, {css: {visibility: "visible"} })
-        .to(imageReveal, 1.4, {width: "0%", ease: Power2.easeInOut});
+        tl.to(container, .2, {css: {visibility: "visible"} })
+        .to(imageReveal, 1.4, {width: "0%", ease: Power2.easeInOut})
+        .from(image, 1.4, {scale: 1.6, ease: Power2.easeInOut});  // going from scale: 1.6, to scale: 1
     });
 
     return (
