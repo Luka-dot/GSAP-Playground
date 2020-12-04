@@ -2,7 +2,7 @@ import React, {useRef, useEffect, useState} from 'react';
 
 import {TweenMax, Power3} from 'gsap';
 
-import './dots.styles.css';
+import './dots.styles.scss';
 
 function Dots() {
 
