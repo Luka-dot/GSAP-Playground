@@ -34,7 +34,7 @@ function Slider() {
 
     return (
         <div className="testimonial-section">
-            <div className="testimonial-component">
+            <div className="testimonial-container">
                 <div className="arrows left">
                     <spam>
                         <img src={leftArrow} alt="left arrow" />
@@ -44,13 +44,13 @@ function Slider() {
                     <div className="t-mage">
                         <ul>
                             <li>
-                                <img src={testimonials[0].image} alt={testimonials[0].name} />
+                                <img className="img-testimonial" src={testimonials[0].image} alt={testimonials[0].name} />
                             </li>
                             <li>
-                                <img src={testimonials[1].image} alt={testimonials[1].name} />
+                                <img className="img-testimonial" src={testimonials[1].image} alt={testimonials[1].name} />
                             </li>
                             <li>
-                                <img src={testimonials[2].image} alt={testimonials[2].name} />
+                                <img className="img-testimonial" src={testimonials[2].image} alt={testimonials[2].name} />
                             </li>
                         </ul>
                     </div>

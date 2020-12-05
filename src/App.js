@@ -51,16 +51,14 @@ function App() {
           Text and Logo scrolls on re-load.
         </p>
       </header>
-      <Switch>
       <div className="body-container">
         <Dots />
         <ImageTransition />
       </div>
-      <Route exact path='/slider' component={Slider} />
-      {/* <div>
+      {/* <Route exact path='/slider' component={Slider} /> */}
+      <div>
       <Slider />
-      </div> */}
-      </Switch>
+      </div>
     </div>
   );
 }
