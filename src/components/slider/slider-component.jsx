@@ -42,15 +42,42 @@ function Slider() {
                 </div>
                 <div className="inner">
                     <div className="t-mage">
-                        <li>
-                            <img src={testimonials[0].image} alt={testimonials[0].name} />
-                        </li>
-                        <li>
-                            <img src={testimonials[1].image} alt={testimonials[1].name} />
-                        </li>
-                        <li>
-                            <img src={testimonials[2].image} alt={testimonials[2].name} />
-                        </li>
+                        <ul>
+                            <li>
+                                <img src={testimonials[0].image} alt={testimonials[0].name} />
+                            </li>
+                            <li>
+                                <img src={testimonials[1].image} alt={testimonials[1].name} />
+                            </li>
+                            <li>
+                                <img src={testimonials[2].image} alt={testimonials[2].name} />
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="t-content">
+                        <ul>
+                            <li>
+                                <div className="content-inner">
+                                    <p className="quote">{testimonials[0].quote}</p>
+                                    <h3 className="name>">{testimonials[0].name}</h3>
+                                    <h4 className="title">{testimonials[0].title}</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="content-inner">
+                                    <p className="quote">{testimonials[2].quote}</p>
+                                    <h3 className="name>">{testimonials[2].name}</h3>
+                                    <h4 className="title">{testimonials[2].title}</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="content-inner">
+                                    <p className="quote">{testimonials[3].quote}</p>
+                                    <h3 className="name>">{testimonials[3].name}</h3>
+                                    <h4 className="title">{testimonials[3].title}</h4>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div className="arrows right">
