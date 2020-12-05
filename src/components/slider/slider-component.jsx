@@ -65,16 +65,16 @@ function Slider() {
                             </li>
                             <li>
                                 <div className="content-inner">
-                                    <p className="quote">{testimonials[2].quote}</p>
-                                    <h3 className="name>">{testimonials[2].name}</h3>
-                                    <h4 className="title">{testimonials[2].title}</h4>
+                                    <p className="quote">{testimonials[1].quote}</p>
+                                    <h3 className="name>">{testimonials[1].name}</h3>
+                                    <h4 className="title">{testimonials[1].title}</h4>
                                 </div>
                             </li>
                             <li>
                                 <div className="content-inner">
-                                    <p className="quote">{testimonials[3].quote}</p>
-                                    <h3 className="name>">{testimonials[3].name}</h3>
-                                    <h4 className="title">{testimonials[3].title}</h4>
+                                    <p className="quote">{testimonials[2].quote}</p>
+                                    <h3 className="name>">{testimonials[2].name}</h3>
+                                    <h4 className="title">{testimonials[2].title}</h4>
                                 </div>
                             </li>
                         </ul>

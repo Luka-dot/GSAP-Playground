@@ -1,4 +1,5 @@
 import React, {useRef, useEffect} from 'react';
+import { Switch, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <header className="App-header">
         <img 
           ref={el => {logoItem = el}}
@@ -49,11 +51,16 @@ function App() {
           Text and Logo scrolls on re-load.
         </p>
       </header>
+      <Switch>
       <div className="body-container">
         <Dots />
         <ImageTransition />
       </div>
+      <Route exact path='/slider' component={Slider} />
+      {/* <div>
       <Slider />
+      </div> */}
+      </Switch>
     </div>
   );
 }

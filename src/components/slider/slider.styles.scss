@@ -1,3 +1,67 @@
 $text: #2e293c;
 $secondary: #a09da6;
 
+.testimonial-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .testimonial-container {
+        width: 1280px;
+        min-width: 1280px;
+        height: 600px;
+        position: relative;
+        .arrows {
+            position: absolute;
+            display: flex;
+            width: 100px;
+            align-items: center;
+            justify-content: center;
+            bottom: 0;
+            top: 0;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: .3s ease-in-out;
+            &.right {
+                right: 0;
+            }
+        }
+        .inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+            .t-image {
+                width: 500px;
+                height: 600px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                ul {
+                    li {
+                        img {
+
+                        }
+                    }
+                }
+            }
+            .t-content {
+                ul {
+                    li {
+                        .content-inner {
+                            .quote {
+
+                            }
+                            .name {
+
+                            }
+                            .title {
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
