@@ -57,9 +57,9 @@ function Slider() {
     };
 
     const slideRight = (index, duration, multiplied = 1) => {
-        TweenLite.to(imageList.children[index], duration, {             //  TweenLite.to(imageList.children[1], 1, {
-            x: imageWidth - multiplied,                                //  x: -imageWidth,
-            ease: Power3.easeout,                                       //  ease: Power3.easeout,
+        TweenLite.to(imageList.children[index], duration, {             
+            x: imageWidth - multiplied,                                
+            ease: Power3.easeout,                                       
         });
     }
 
@@ -87,11 +87,13 @@ function Slider() {
         if (imageList.children[0].classList.contains('active')) {
             setState({isActive1: false, isActive2: true });
 
-            slideLeft(2, 0, 3);
-            slideLeft(2, 1, 2);
-            scale(2, 1)
-            slideRight(0, 1);
-            slideRight(1, 2);
+            slideLeft(0, 1);
+            slideLeft(1, 1);
+            scale(1, 1);
+            slideLeft(2, 1);
+            slideLeft(2, 0);
+            fadeOut(0, 1);
+            fadeIn(1, 1);
             
         } else if (imageList.children[1].classList.contains('active')) {
             setState({isActive2: false, isActive3: true })
@@ -108,10 +110,11 @@ function Slider() {
             slideLeft(2, 1, 2);
             scale(2, 1);
             slideRight(0, 1);
-            slideRight(1, 1);  
+            slideRight(1, 1);
+            //content transtion
             fadeOut(0, 1);
             fadeIn(2, 1);
-            
+
         } else if (imageList.children[1].classList.contains('active')) {
             setState({isActive2: false, isActive1: true })
         } else if (imageList.children[2].classList.contains('active')) {
