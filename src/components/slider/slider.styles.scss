@@ -8,6 +8,17 @@ $secondary: #a09da6;
     display: flex;
     justify-content: center;
     align-items: center;
+    &:after {
+        content: "";
+        position: absolute;
+        width: 900px;
+        height: 55px;
+        background: #f2f2f6;
+        right: 0;
+        bottom: 0;
+        opacity: 0.8;
+        z-index: -10;
+    }
     .testimonial-container {
         width: 1280px;
         min-width: 1280px;
@@ -25,6 +36,9 @@ $secondary: #a09da6;
             cursor: pointer;
             border-radius: 8px;
             transition: .3s ease-in-out;
+            &:hover {
+                box-shadow: 0px 0px 30px rgba(0, 0, 80, 0.5);
+            }
             &.right {
                 right: 0;
             }
@@ -43,6 +57,17 @@ $secondary: #a09da6;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 200px;
+                    height: 200px;
+                    background: #3f56da;
+                    left: 140px;
+                    top: 0;
+                    border-radius: 100%;
+                    z-index: -9;
+                }
                 ul {
                     display: flex;
                     position: absolute;
@@ -74,15 +99,72 @@ $secondary: #a09da6;
                     li {
                         width: 500px;
                         height: 400px;
+                        color: $text;
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        opacity: 0;
+                        &:nth-child(1) {
+                            opacity: 1;
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                height: 15px;
+                                width: 38px;
+                                background: $text;
+                                opacity: 0.3;
+                                left: 0;
+                                top: 206px;
+                            }
+                        }
+                        &:nth-child(2) {
+                            opacity: 0;
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                height: 15px;
+                                width: 58px;
+                                background: $text;
+                                opacity: 0.3;
+                                left: 0;
+                                top: 206px;
+                            }
+                        }
+                        &:nth-child(3) {
+                            opacity: 0;
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                height: 15px;
+                                width: 68px;
+                                background: $text;
+                                opacity: 0.3;
+                                left: 0;
+                                top: 206px;
+                            }
+                        }
                         .content-inner {
+                            width: 500px;
+                            text-align: start;
                             .quote {
-
+                                font-size: 26px;
+                                letter-spacing: 0.88px;
+                                line-height: 40px;
+                                font-weight: 700;
+                                margin-bottom: 16px;
                             }
                             .name {
-
+                                font-size: 18px;
+                                letter-spacing: 0.88px;
+                                line-height: 28px;
+                                color: $secondary;
+                                font-weight: 600;
                             }
                             .title {
-
+                                font-size: 18px;
+                                letter-spacing: 0.88px;
+                                line-height: 28px;
+                                color: $secondary;
                             }
                         }
                     }
