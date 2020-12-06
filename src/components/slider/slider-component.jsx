@@ -34,6 +34,8 @@ function Slider() {
     let imageList = useRef(null);
     let testimonialList = useRef(null);
 
+    const imageWidth = 340;
+
     const [state, setState] = useState({
         isActive1: true,
         isActive2: false,
@@ -47,20 +49,80 @@ function Slider() {
         })
     }, [])
 
+    const slideLeft = (index, duration, multiplied = 1) => {
+        TweenLite.to(imageList.children[index], duration, {             //  TweenLite.to(imageList.children[1], 1, {
+            x: -imageWidth - multiplied,                                //  x: -imageWidth,
+            ease: Power3.easeout,                                       //  ease: Power3.easeout,
+        });
+    };
+
+    const slideRight = (index, duration, multiplied = 1) => {
+        TweenLite.to(imageList.children[index], duration, {             //  TweenLite.to(imageList.children[1], 1, {
+            x: imageWidth - multiplied,                                //  x: -imageWidth,
+            ease: Power3.easeout,                                       //  ease: Power3.easeout,
+        });
+    }
+
+    const scale = (index, duration) => {
+        TweenLite.from(imageList.children[index], duration, {             
+            scale: 1.2,                             
+            ease: Power3.easeout,                                      
+        });
+    }
+
+    const fadeOut = (index, duration) => {
+        TweenLite.to(testimonialList.children[index], duration, {
+            opacity: 0
+        });
+    }
+
+    const fadeIn = (index, duration) => {
+        TweenLite.to(testimonialList.children[index], duration, {
+            opacity: 1,
+            delay: 0.8
+        })
+    }
+
     const nextSlide = () => {
         if (imageList.children[0].classList.contains('active')) {
-            setState({isActive1: false, isActive2: true })
+            setState({isActive1: false, isActive2: true });
+
+            slideLeft(2, 0, 3);
+            slideLeft(2, 1, 2);
+            scale(2, 1)
+            slideRight(0, 1);
+            slideRight(1, 2);
+            
         } else if (imageList.children[1].classList.contains('active')) {
             setState({isActive2: false, isActive3: true })
         } else if (imageList.children[2].classList.contains('active')) {
             setState({isActive3: false, isActive1: true })
+        }
+    };
+
+    const previousSlide = () => {
+        if (imageList.children[0].classList.contains('active')) {
+            setState({isActive1: false, isActive3: true });
+
+            slideLeft(2, 0, 3);
+            slideLeft(2, 1, 2);
+            scale(2, 1);
+            slideRight(0, 1);
+            slideRight(1, 1);  
+            fadeOut(0, 1);
+            fadeIn(2, 1);
+            
+        } else if (imageList.children[1].classList.contains('active')) {
+            setState({isActive2: false, isActive1: true })
+        } else if (imageList.children[2].classList.contains('active')) {
+            setState({isActive1: true, isActive3: false })
         }
     }
 
     return (
         <div className="testimonial-section">
             <div className="testimonial-container">
-                <div className="arrows left">
+                <div className="arrows left" onClick={previousSlide}>
                     <img className="arrowIcon" src={leftArrow} alt="left arrow" />
                 </div>
                 <div className="inner">
