@@ -36,12 +36,10 @@ function Slider() {
         <div className="testimonial-section">
             <div className="testimonial-container">
                 <div className="arrows left">
-                    <spam>
-                        <img src={leftArrow} alt="left arrow" />
-                    </spam>
+                    <img className="arrowIcon" src={leftArrow} alt="left arrow" />
                 </div>
                 <div className="inner">
-                    <div className="t-mage">
+                    <div className="t-image">
                         <ul>
                             <li>
                                 <img className="img-testimonial" src={testimonials[0].image} alt={testimonials[0].name} />
@@ -81,9 +79,7 @@ function Slider() {
                     </div>
                 </div>
                 <div className="arrows right">
-                    <spam>
-                        <img src={rightArrow} alt="right arrow" />
-                    </spam>
+                    <img className="arrowIcon" src={rightArrow} alt="right arrow" />
                 </div>
             </div>
         </div>

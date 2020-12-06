@@ -1,10 +1,7 @@
 $text: #2e293c;
 $secondary: #a09da6;
 
-.img-testimonial {
-    width: 260px;
-    height: 280px;
-}
+
 
 .testimonial-section {
     height: 100vh;
@@ -17,7 +14,7 @@ $secondary: #a09da6;
         height: 600px;
         position: relative;
         .arrows {
-            background-color: pink;
+            color: #2e293c;
             position: absolute;
             display: flex;
             width: 100px;
@@ -30,6 +27,9 @@ $secondary: #a09da6;
             transition: .3s ease-in-out;
             &.right {
                 right: 0;
+            }
+            .arrowIcon {
+                max-width: 50px;
             }
         }
         .inner {
@@ -44,16 +44,36 @@ $secondary: #a09da6;
                 justify-content: center;
                 align-items: center;
                 ul {
+                    display: flex;
+                    position: absolute;
+                    overflow: hidden;
+                    height: 460px;
+                    width: 340px;
+                    box-shadow: 0px 0px 40px rgba(0,0,10,0.25);
+                    padding: 0;
                     li {
+                        height: 460px;
+                        width: 340px;
                         img {
-
+                            height: 460px;
+                            width: 340px;
                         }
                     }
                 }
             }
             .t-content {
+                width: 500px;
+                height: 600px;
+                display: flex;
+                align-items: center;
                 ul {
+                    position: absolute;
+                    overflow: hidden;
+                    width: 500px;
+                    height: 400px;
                     li {
+                        width: 500px;
+                        height: 400px;
                         .content-inner {
                             .quote {
 
