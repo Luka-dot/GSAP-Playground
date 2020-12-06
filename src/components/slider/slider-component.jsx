@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-import {TimelineLite, Power2} from 'gsap';
+import {TweenLite, Power3} from 'gsap';
 
 import "./slider.styles.scss";
 import motoImage from '../../assets/moto.jpg';
@@ -31,6 +31,21 @@ const testimonials = [
 ]
 
 function Slider() {
+    let imageList = useRef(null);
+    let testimonialList = useRef(null);
+
+    const [state, setState] = useState({
+        isActive1: true,
+        isActive2: false,
+        isActive3: false,
+    })
+
+    useEffect(() => {
+    //    console.log(imageList.children[0])
+        TweenLite.to(testimonialList.children[0], 0, {
+            opacity: 1,
+        })
+    }, [])
 
     return (
         <div className="testimonial-section">
@@ -40,20 +55,20 @@ function Slider() {
                 </div>
                 <div className="inner">
                     <div className="t-image">
-                        <ul>
-                            <li>
+                        <ul ref={el => imageList = el} >
+                            <li className={state.isActive1 ? "active" : "" } >
                                 <img className="img-testimonial" src={testimonials[0].image} alt={testimonials[0].name} />
                             </li>
-                            <li>
+                            <li className={state.isActive2 ? "active" : "" } >
                                 <img className="img-testimonial" src={testimonials[1].image} alt={testimonials[1].name} />
                             </li>
-                            <li>
+                            <li className={state.isActive3 ? "active" : "" } >
                                 <img className="img-testimonial" src={testimonials[2].image} alt={testimonials[2].name} />
                             </li>
                         </ul>
                     </div>
                     <div className="t-content">
-                        <ul>
+                        <ul ref={el => testimonialList = el} >
                             <li>
                                 <div className="content-inner">
                                     <p className="quote">{testimonials[0].quote}</p>
