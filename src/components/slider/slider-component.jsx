@@ -47,6 +47,16 @@ function Slider() {
         })
     }, [])
 
+    const nextSlide = () => {
+        if (imageList.children[0].classList.contains('active')) {
+            setState({isActive1: false, isActive2: true })
+        } else if (imageList.children[1].classList.contains('active')) {
+            setState({isActive2: false, isActive3: true })
+        } else if (imageList.children[2].classList.contains('active')) {
+            setState({isActive3: false, isActive1: true })
+        }
+    }
+
     return (
         <div className="testimonial-section">
             <div className="testimonial-container">
@@ -69,21 +79,21 @@ function Slider() {
                     </div>
                     <div className="t-content">
                         <ul ref={el => testimonialList = el} >
-                            <li>
+                            <li className={state.isActive1 ? "active" : "" }>
                                 <div className="content-inner">
                                     <p className="quote">{testimonials[0].quote}</p>
                                     <h3 className="name>">{testimonials[0].name}</h3>
                                     <h4 className="title">{testimonials[0].title}</h4>
                                 </div>
                             </li>
-                            <li>
+                            <li className={state.isActive2 ? "active" : "" }>
                                 <div className="content-inner">
                                     <p className="quote">{testimonials[1].quote}</p>
                                     <h3 className="name>">{testimonials[1].name}</h3>
                                     <h4 className="title">{testimonials[1].title}</h4>
                                 </div>
                             </li>
-                            <li>
+                            <li className={state.isActive3 ? "active" : "" }>
                                 <div className="content-inner">
                                     <p className="quote">{testimonials[2].quote}</p>
                                     <h3 className="name>">{testimonials[2].name}</h3>
@@ -93,7 +103,7 @@ function Slider() {
                         </ul>
                     </div>
                 </div>
-                <div className="arrows right">
+                <div className="arrows right" onClick={nextSlide}>
                     <img className="arrowIcon" src={rightArrow} alt="right arrow" />
                 </div>
             </div>
