@@ -12,21 +12,21 @@ import rightArrow from '../../assets/right-arrow.svg';
 const testimonials = [
     {
         name: "Mike",
-        title: "CEO",
+        title: "moto",
         image: motoImage,
-        quote: "this is test quote for first slide"
+        quote: "this is test quote for first slide motorcycle image"
     },
     {
         name: "Jennifer",
-        title: "CFO/HR",
+        title: "road",
         image: roadImage,
-        quote: "this is test quote for second slide"
+        quote: "this is test quote for open road picture second slide"
     },
     {
         name: "John Dow",
-        title: "CTO wizzard",
+        title: "Skyline",
         image: skylineImage,
-        quote: "this is test quote for third slide"
+        quote: "this is test quote for beautiful skyline picture, third slide"
     }
 ]
 
@@ -85,72 +85,72 @@ function Slider() {
 
     const nextSlide = () => {
         if (imageList.children[0].classList.contains("active")) {
-          setState({ isActive1: false, isActive2: true });
-          //Image transition
-          slideLeft(0, 1);
-          slideLeft(1, 1);
-          scale(1, 1);
-          slideLeft(2, 1);
-          slideLeft(2, 0);
-          fadeOut(0, 1);
-          fadeIn(1, 1);
+        setState({ isActive1: false, isActive2: true });
+        //Image transition
+        slideLeft(0, 1);
+        slideLeft(1, 1);
+        scale(1, 1);
+        slideLeft(2, 1);
+        slideLeft(2, 0);
+        fadeOut(0, 1);
+        fadeIn(1, 1);
         } else if (imageList.children[1].classList.contains("active")) {
-          setState({ isActive2: false, isActive3: true });
-          //Image transition
-          slideRight(0, 1);
-          slideLeft(1, 1, 2);
-          slideLeft(2, 1, 2);
-          scale(2, 1);
+        setState({ isActive2: false, isActive3: true });
+        //Image transition
+        slideRight(0, 1);
+        slideLeft(1, 1, 2);
+        slideLeft(2, 1, 2);
+        scale(2, 1);
           //content transition
-          fadeOut(1, 1);
-          fadeIn(2, 1);
+        fadeOut(1, 1);
+        fadeIn(2, 1);
         } else if (imageList.children[2].classList.contains("active")) {
-          setState({ isActive1: true, isActive3: false });
+        setState({ isActive1: true, isActive3: false });
           //Image transition
-          slideLeft(2, 1, 3);
-          slideLeft(0, 1, 0);
-          slideLeft(1, 0, 0);
-          scale(0, 1);
-          //content transition
-          fadeOut(2, 1);
-          fadeIn(0, 1);
+        slideLeft(2, 1, 3);
+        slideLeft(0, 1, 0);
+        slideLeft(1, 0, 0);
+        scale(0, 1);
+        //content transition
+        fadeOut(2, 1);
+        fadeIn(0, 1);
         }
-      };
+    };
 
-      const previousSlide = () => {
+    const previousSlide = () => {
         if (imageList.children[0].classList.contains("active")) {
-          setState({ isActive1: false, isActive3: true });
+        setState({ isActive1: false, isActive3: true });
           //Image transition
-          slideLeft(2, 0, 3);
-          slideLeft(2, 1, 2);
-          scale(2, 1);
-          slideRight(0, 1);
-          slideRight(1, 1);
+        slideLeft(2, 0, 3);
+        slideLeft(2, 1, 2);
+        scale(2, 1);
+        slideRight(0, 1);
+        slideRight(1, 1);
           //content transtion
-          fadeOut(0, 1);
-          fadeIn(2, 1);
+        fadeOut(0, 1);
+        fadeIn(2, 1);
         } else if (imageList.children[1].classList.contains("active")) {
-          setState({ isActive2: false, isActive1: true });
-          //Image transition
-          slideLeft(0, 0);
-          slideRight(0, 1, 0);
-          slideRight(1, 1, 0);
-          slideRight(2, 1, 2);
-          scale(0, 1);
-          //content transtion
-          fadeOut(1, 1);
-          fadeIn(0, 1);
+        setState({ isActive2: false, isActive1: true });
+        //Image transition
+        slideLeft(0, 0);
+        slideRight(0, 1, 0);
+        slideRight(1, 1, 0);
+        slideRight(2, 1, 2);
+        scale(0, 1);
+        //content transtion
+        fadeOut(1, 1);
+        fadeIn(0, 1);
         } else if (imageList.children[2].classList.contains("active")) {
-          setState({ isActive2: true, isActive3: false });
-          slideLeft(2, 1);
-          slideLeft(1, 0, 2);
-          slideLeft(1, 1);
-          scale(1, 1);
-          //content transtion
-          fadeOut(2, 1);
-          fadeIn(1, 1);
+        setState({ isActive2: true, isActive3: false });
+        slideLeft(2, 1);
+        slideLeft(1, 0, 2);
+        slideLeft(1, 1);
+        scale(1, 1);
+        //content transtion
+        fadeOut(2, 1);
+        fadeIn(1, 1);
         }
-      };
+    };
 
     return (
         <div className="testimonial-section">
