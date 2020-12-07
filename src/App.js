@@ -59,7 +59,10 @@ function App() {
       </div>
       {/* <Route exact path='/slider' component={Slider} /> */}
       <div>
-      <Slider />
+        <Slider />
+      </div>
+      <div>
+        <Hero />
       </div>
     </div>
   );
