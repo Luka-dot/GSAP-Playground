@@ -15,6 +15,12 @@ function Hero() {
         const imageOne = images.firstElementChild;
         const imageTwo = images.lastElementChild;
 
+        const headlineFirst = cotent.children[0].children[0];
+        const headlineSecond = headlineFirst.nextSibling;
+        const headlineThird = headlineSecond.nextSibling;
+        const contentP = content.children[1];
+        const contentButton = content.children[2];
+
         let tl = new TimelineLite();
         // images animations
         TweenMax.to(hero, 0, {css: {visibility: 'visible'}});  // this avoids flashing on load.
