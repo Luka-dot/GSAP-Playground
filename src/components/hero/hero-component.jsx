@@ -29,7 +29,7 @@ function Hero() {
                                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                     </p>
                                 <div className="btn-row">
-                                    <button className="explore-button">
+                                    <button className="explore-button">Explore
                                         <div className="arrow-icon">
                                             <img src={rightArr} alt="arrow" />
                                         </div>
@@ -40,10 +40,10 @@ function Hero() {
                     <div className="hero-images">
                         <div className="hero-images-inner">
                             <div className="hero-image one">
-                                <image src={hero1Picture} alt="one" />
+                                <img src={hero1Picture} alt="one" />
                             </div>
                             <div className="hero-image two">
-                                <image src={hero2Picture} alt="two" />
+                                <img src={hero2Picture} alt="two" />
                             </div>
                         </div>
                     </div>   
