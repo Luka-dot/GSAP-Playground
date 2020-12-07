@@ -9,33 +9,42 @@ import rightArr from '../../assets/right-arrow.svg';
 function Hero() {
     let hero = useRef(null);
     let images = useRef(null);
-    let conten = useRef(null);
+    let content = useRef(null);
+
+    let tl = new TimelineLite({delay: .8});
 
     useEffect(() => {
         const imageOne = images.firstElementChild;
         const imageTwo = images.lastElementChild;
 
-        const headlineFirst = cotent.children[0].children[0];
+        const headlineFirst = content.children[0].children[0];
         const headlineSecond = headlineFirst.nextSibling;
         const headlineThird = headlineSecond.nextSibling;
         const contentP = content.children[1];
         const contentButton = content.children[2];
 
-        let tl = new TimelineLite();
         // images animations
         TweenMax.to(hero, 0, {css: {visibility: 'visible'}});  // this avoids flashing on load.
-        tl.from(imageOne, 1.8, {y: 1380, ease: Power3.easeOut})
+        tl.from(imageOne, 1.8, {y: 1380, ease: Power3.easeOut}, 'Start')
             .from(imageOne.firstElementChild, 2, {scale: 1.6, ease: Power3.easeOut}, .2)
             .from(imageTwo, 1.5, {y: 800, ease: Power3.easeOut}, .5)
-            .from(imageTwo.firstElementChild, 1.6, {scale: 1.6, ease: Power3.easeOut}, 1)
-    })
+            .from(imageTwo.firstElementChild, 1.6, {scale: 1.6, ease: Power3.easeOut}, 1);
+
+        tl.staggerFrom([headlineFirst.children, headlineSecond.children, headlineThird.children], 1, {
+            y: 44,
+            ease: Power3.easeOut,
+            delay: .8
+        }, 0.15, 'Start')
+        .from(contentP, 1, {y: 20, opacity: 0, ease: Power3.easeOut}, 1.4)
+        .from(contentButton, 1, {y: 20, opacity: 0, ease: Power3.easeOut}, 1.8);
+    }, [tl]);
 
     return(
         <div className="hero" ref={el => hero = el}>
             <div className="hero-container">
                 <div className="hero-inner">
                     <div className="hero-content">                      
-                        <div className="hero-content-inner" ref={el => conten = el}>
+                        <div className="hero-content-inner" ref={el => content = el}>
                             <h1>
                                 <div className="hero-content-line">
                                     <div className="hero-content-line-inner">First line</div>
