@@ -31,7 +31,7 @@ function Hero() {
                                 <div className="btn-row">
                                     <button className="explore-button">Explore
                                         <div className="arrow-icon">
-                                            <img src={rightArr} alt="arrow" />
+                                            <img className="arrow-svg" src={rightArr} alt="arrow" />
                                         </div>
                                     </button>
                                 </div>
