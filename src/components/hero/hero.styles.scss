@@ -1,4 +1,43 @@
 .hero {
-    color: black;
-   
+    padding: 0;
+    margin: 0;
+
+    .hero-container {
+        .hero-inner {
+            .hero-content {
+                .hero-content-inner {
+                    h1 {
+                        .hero-content-line-inner {
+
+                        }
+                    }
+                    p{
+
+                    }
+                    .btn-row {
+                        button {
+                            .arrow-icon {
+
+                            }
+                        }
+                    }
+                }
+            }
+            .hero-image {
+                .hero-image-inner {
+                    .hero-image {
+                        &.one {
+
+                        }
+                        &.two {
+
+                        }
+                        img{
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -10,7 +10,7 @@ function Hero() {
 
     return(
         <div className="hero">
-            <div className="container">
+            <div className="hero-container">
                 <div className="hero-inner">
                     <div className="hero-content">                      
                         <div className="hero-content-inner">
