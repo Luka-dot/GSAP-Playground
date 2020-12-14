@@ -1,5 +1,4 @@
 import React, {useRef, useEffect} from 'react';
-import { Switch, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import 'reset-css';
